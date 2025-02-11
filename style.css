@@ -79,7 +79,7 @@ h1{
 
 /* ------------------------------ Main Section -------------------------------*/
 
-.mainSection{
+.container{
     box-sizing: border-box;
     max-width: 70%;
     margin: auto;
@@ -88,5 +88,41 @@ h1{
     margin-top: 50px;
     padding: 10px 30px;
     text-align: justify;
+    padding-bottom: 30px;
 }
 
+.container__subTitle{
+    font-size: 26px;
+    text-align: center;
+}
+
+.container__projectTitle{
+    font-size: 18px;
+}
+
+.container__text{
+    margin: auto;
+    width: 90%;
+    text-align: justify;
+    padding: 10px 0;
+}
+
+.text--black{
+    font-weight: bold;
+}
+
+/* --------------------------------- Footer ----------------------------------*/
+
+.footer{
+    height: 300px;
+    margin-top: 100px;
+    background-color: #301e00;
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 20px;
+}
+
+.footer__link{
+    color: #cc9a44;
+}

@@ -84,23 +84,34 @@
             <ul class="container__list">
                 <li>
                     <span class="text--black">¿Cuál es la diferencia entre Internet y la World Wide Web?</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">El internet se refiere a una red de computadoras conectadas entre sí, mientras que la World Wide Web o Web es una colección de páginas que funciona con internet. Con esto nos damos cuenta que la web depende del internet. Con una analogía el internet serían las carreteras y caminos y la web son los carros o personas que circulan por esos caminos</p>
                 </li>
                 <li>
                     <span class="text--black">¿Cuáles son las partes de un URL?</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">
+                        Generalmente una URL esta conformada por 4 partes, un Esquema que define el tipo de protocolo que se usa para acceder a un recurso en internet, pueden ser HTTP o HTTPS, después está el nombre del host, que identifica quien tiene el recurso, continuando con la ruta o camino que identifica el recurso especifico que se desea acceder y finalmente puede contener una cadena de consulta que va al final de la URL, por lo general esta es una cadena de pares, con parametro y valor.
+                    </p>
+                    <p class="container__text">
+                        Ejemplo de una URL: Protocolo://nombreHost:port/ruta?consulta.
+                    </p>
                 </li>
                 <li>
                     <span class="text--black">¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">
+                        Los metodos HTTP tienen la función de hacer distintas acciones en un sitio web, GET: se utiliza para recuperar datos, HEAD: sirve de la misma forma que GET pero no devuelve el cuerpo de mensaje en la respuesta, POST: se utiliza para enviar una entidad o recurso en especifico, PUT: funciona para reemplazar un recurso por otro en el destino, PATCH: sirve para aplicar modificaciones parciales a un recurso, finalmente DELETE: elimina un recurso en especifico.
+                    </p>
                 </li>
                 <li>
                     <span class="text--black">¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">
+                        Se deberá implementar un método POST debido a que este se encarga de enviar datos al destino esperado, creando un nuevo registro en una base de datos por ejemplo, ningún otro método tiene esta misma funcionalidad, solo se podría parecer PUT debido a que igual se envían datos pero no se debe usar este porque reemplaza a un registro. En conclusión POST es el indicado.
+                    </p>
                 </li>
                 <li>
                     <span class="text--black">¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">
+                        El método encargado de hacer esta tarea es el método GET, debido a que esta se encarga de pedir y recuperar la información, en este caso con la URL se esta accediendo a una página web o cualquier otro recurso, devolviendo ese recurso.
+                    </p>
                 </li>
                 <li>
                     <span class="text--black">Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</span>
@@ -108,23 +119,40 @@
                 </li>
                 <li>
                     <span class="text--black">¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">
+                        Si y no, porque este error que representa que el contenido no fue encontrado, esto se puede deber tanto a un error propio al momento de desplegar un proyecto, o que el cliente ingreso mal la URL o intenta acceder a una página que realmente no existe.
+                    </p>
                 </li>
                 <li>
                     <span class="text--black">¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">
+                        Para un error 500, si es responsabilidad del desarrollador, ya que este error por lo general se refiere a un error del servidor, esto ocurre por motivos muy distintos, desde una mala consulta, la base de datos falló en algun punto, una mala conexión de la API, errores de sintaxis, etc. Por lo que si es responsabilidad del desarrollador arreglar esto.
+                    </p>
                 </li>
                 <li>
                     <span class="text--black">¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">
+                        Desaprobado o despreciado, son formas de decirle a elementos de HTML que han sido reemplazados por estructuras nuevas, algunos ejemplos de etiquetas desaprobadas son <strong>acronym</strong>, usada para los acronimos, <strong>big</strong>, que aumentaba el tamaño de letra de los caracteres que se encontraran dentro de esta etiqueta, <strong>tt</strong>, que etiquetaba texto de fuente de espaciado fijo, incluso atributos como <strong>name</strong> , que se utilizaba para nombrar elementos, <strong>border</strong>, usado en tablas u otros elementos, para brindarle un borde a estos elementos, <strong>frame</strong>, con el mismo uso que border, pero este establece los lados del borde que eran visibles, <strong>rules</strong>, que establecia que bordes interiores de la tabla eran visibles.
+                    </p>
                 </li>
                 <li>
                     <span class="text--black">¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">
+                        La compatibilidad es una gran diferencia, debido a que en HTML5 la mayoría de sus funciones son compatibles con los navegadores, contando con nuevas etiquetas que son total o parcialmente compatibles en muchos navegadores.
+                    </p>
+                    <p class="container__text"> El soporte multimedia es también una gran diferencia, pudiendo agregar audios, videos, animaciones y juegos, cosa que antes requería de javascript pero ahora HTML5 cuenta con etiquetas que hacen muy simple este proceso</p>
+                    <p class="container__text">
+                        HTML5 cuenta con la ventaja de ser mucho más rápido que sus versiones anteriores, esto gracias a que con HTML5 se han traido mejores normas para garantizar que los sitios web funcionen con mayor fluidez, admitiendo ahora el multithreading con javascript, haciendo que el procesador utilice más potencia.
+                    </p>
+                    <p class="container__text">
+                        En cuanto al almacenamiento web HTML4 solo admite cookies, por lo que almacenar la información del usuario en una cookie que solo permite guardar 4 kb es muy dificil, mientras que en local la diferencia es muy considerable permitiendo guardar entre 5 y 10 mb, además que este no se borra al contrario que las cookies. HTML5 permitió el almacenamiento en local a través de una API de almacenamiento web que además permite el almacenamiento en bases de datos web SQL.
+                    </p>
                 </li>
                 <li>
                     <span class="text--black">¿Qué componentes de estructura y estilo tiene una tabla?</span>
-                    <p class="container__text"></p>
+                    <p class="container__text">
+                        
+                    </p>
                 </li>
                 <li>
                     <span class="text--black">¿Cuáles son los principales controles de una forma HTML5?</span>
@@ -147,8 +175,47 @@
         <section id="fuentes" class="container">
             <h2 class="container__subTitle">Fuentes bibliograficas</h2>
             <p class="container__text"> 
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum maiores consequuntur, laborum sed, neque sunt corrupti corporis alias magnam veniam quos beatae nulla voluptas officiis amet provident, vel doloremque animi?
+                Redacción. (2019, March 12). ¿Cuál es la diferencia entre internet y la web? (y por qué muchos las confunden). BBC News Mundo.
+                <a href="https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,para%20acceder%20a%20la%20web.">https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,para%20acceder%20a%20la%20web.</a>
             </p>
+            <p class="container__text">
+                CICS Transaction Server for z/OS 6.x. (n.d). 
+                <a href="https://www.ibm.com/docs/es/cics-ts/6.x?topic=concepts-components-url">https://www.ibm.com/docs/es/cics-ts/6.x?topic=concepts-components-url</a>
+            </p>
+            <p class="container__text">
+                Métodos de petición HTTP - HTTP | MDN. (2023, July 24). MDN Web Docs. 
+                <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Methods">https://developer.mozilla.org/es/docs/Web/HTTP/Methods</a>
+            </p>
+            <p class="container__text">
+                Boada, D. (2025, February 3). ¿Qué es el error 404 not found? 6 soluciones sencillas. Tutoriales Hostinger. 
+                <a href="https://www.hostinger.mx/tutoriales/error-404">https://www.hostinger.mx/tutoriales/error-404</a>
+            </p>
+            <p class="container__text">
+                Hosting, S. W. (2024, November 6). ¿Qué es el “500 Internal Server Error” y cómo solucionarlo? SiteGround. 
+                <a href="https://es.siteground.com/kb/500-internal-error/#:~:text=En%20cambio%2C%20responde%20con%20el,personalizan%20la%20p%C3%A1gina%20de%20error.">https://es.siteground.com/kb/500-internal-error/#:~:text=En%20cambio%2C%20responde%20con%20el,personalizan%20la%20p%C3%A1gina%20de%20error.</a>
+            </p>
+            <p class="container__text">
+                Conformidad: requisitos y recomendaciones. (n.d.). 
+                <a href="http://html.conclase.net/w3c/html401-es/conform.html">http://html.conclase.net/w3c/html401-es/conform.html</a>
+            </p>
+            <p class="container__text">
+                Marco, B. S. (n.d.). Elementos obsoletos. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org. 
+                <a href="https://www.mclibre.org/consultar/htmlcss/html/html-obsoletos.html">https://www.mclibre.org/consultar/htmlcss/html/html-obsoletos.html</a>
+            </p>
+            <p class="container__text">
+                Barron, B. (2021, April 8). HTML vs HTML5: Conoce las diferencias cruciales entre ellos. Kinsta®. 
+                <a href="">https://kinsta.com/es/blog/html-vs-html5/</a>
+            </p>
+            <p class="container__text">
+                Marco, B. S. (n.d.-b). Tablas. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org. 
+                <a href="https://www.mclibre.org/consultar/htmlcss/html/html-tablas.html">https://www.mclibre.org/consultar/htmlcss/html/html-tablas.html</a>
+            </p>
+            <p class="container__text"><a href=""></a></p>
+            <p class="container__text"><a href=""></a></p>
+            <p class="container__text"><a href=""></a></p>
+            <p class="container__text"><a href=""></a></p>
+            <p class="container__text"><a href=""></a></p>
+            <p class="container__text"><a href=""></a></p>
         </section>
     </main>
 
@@ -162,7 +229,9 @@
             <strong>Linkedin:</strong> 
             <a class="footer__link" target="_blank" href="https://www.linkedin.com/in/%E2%9A%9C%EF%B8%8Fyael-charles-marin%E2%9A%9C%EF%B8%8F-721162319?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bu6rC4SQJTIOa%2FBrJFj5Uhg%3D%3D">Yael Charles Marin</a>
         </p>
-        <p>Editor de texto: Visual Studio Code</p>
+        <p>Editor de texto: 
+            <a class="footer__link" href="https://code.visualstudio.com/">Visual Studio Code</a>
+        </p>
         <p>Gracias por leer</p>
     </footer>
 </body>

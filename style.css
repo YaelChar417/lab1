@@ -6,25 +6,16 @@ body{
 
 /* ---------------------------------- Header -------------------------------- */
 .header{
-    background-color: #d61f1b;
+    background-color: #560C0B;
     color: antiquewhite;    
     width: 100%;
     display: flex;
-}
-
-.header__overlay{
-    background-color: #0009;
-    height: 95vh;
-    width: 100%;
-    position: absolute;
-    z-index: 10;
 }
 
 .header__content{
     margin: auto;
     position: relative;
     text-align: center;
-    z-index: 20;
 }
 
 .header__img{
@@ -108,6 +99,10 @@ h1{
 
 .text--black{
     font-weight: bold;
+}
+
+video{
+    width: 30%;
 }
 
 /* --------------------------------- Footer ----------------------------------*/

@@ -33,7 +33,7 @@ function adivinarResultado(){
     } else
     {
         text.innerHTML = "Respuesta incorrecta, tiempo total: " + tiempoTotal + 
-        " segundos, respuesta correcta: " + suma + " " + num1 + " " + num2;
+        " segundos, respuesta correcta: " + suma;
     }
 }
 
@@ -65,3 +65,70 @@ function calcularConteo() {
         "Ceros: " + zeros + "<br>" +
         "Positivos: " + positivos;
 }
+
+function promedios(matriz) {
+    return matriz.map(function(renglon) {
+        let suma = 0;
+        for (let i = 0; i < renglon.length; i++) 
+        {
+            suma += renglon[i];
+        }
+        return suma / renglon.length;
+    });
+}
+document.getElementById("calcular").addEventListener("click", function() {
+    let input = document.getElementById("matrizInput").value;
+    let filas = input.trim().split("\n");
+    
+    let matriz = filas.map(function(fila) {
+    return fila.split(",").map(function(num) 
+    {
+        return parseFloat(num.trim());
+    });
+    });
+    let promediosArray = promedios(matriz);
+    document.getElementById("promedio").textContent = promediosArray.join(", ");
+});
+
+function inverso(num) {
+    return parseInt(num.toString().split('').reverse().join(''));
+}
+document.getElementById("reverso").addEventListener("click", function() {
+    const numero = document.getElementById("numFive").value;
+    
+    const resultadoInverso = inverso(numero);
+    
+    document.getElementById("reverseNum").textContent = resultadoInverso;
+});
+
+class Cuadrado{
+    constructor(nombre, lado){
+        this.nombre = nombre;
+        this.lado = lado;
+    }
+
+    calcularArea(){
+        return this.lado * this.lado;
+    }
+
+    calcularPerimetro(){
+        return this.lado * 4;
+    }
+
+    toString(){
+        return `Hola soy el cuadrado ${this.nombre} con lado ${this.lado} cm.`
+    }
+}
+
+document.getElementById("crearCuadrado").addEventListener("click", function() {
+    const nombre = document.getElementById("nombreInput").value;
+    const lado = parseFloat(document.getElementById("ladoInput").value);
+    
+    // Creamos una instancia de Cuadrado usando los valores ingresados
+    const cuadrado1 = new Cuadrado(nombre, lado);
+    
+    // Mostramos el resultado en el párrafo con id "resultado"
+    document.getElementById("resultadoClase").textContent = 
+    `${cuadrado1.toString()}. Área: ${cuadrado1.calcularArea()}. 
+        Perímetro: ${cuadrado1.calcularPerimetro()}.`;
+  });

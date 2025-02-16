@@ -209,6 +209,48 @@
                         Al usar una versión minimizada del css se reduce el tamaño del archivo y esto hace que se cargue de forma más rapida y por ende también lo haga la pagina.
                     </p>
                 </li>
+                <li>
+                    <span class="text--black">¿Qué diferencias y semejanzas hay entre Java y JavaScript?</span>
+                    <p class="container__text">
+                        Las diferencias entre java y javascript son muy marcadas, primero tenemos que javascript es propiedad de Netscape mientras que java es parte de Oracle, asimismo javascript no crea aplicaciones independientes pues esta principalmente orientado para documentos html y brinda niveles de interacción que con html plano no se podría. Otra diferencia importante es que java es un lenguaje de programación orientado a objetos (OOP) y javascript es un lenguaje de scripts OOP, con java se pueden crear aplicaciones que se ejecuten en una maquina o explorador virtual y javascript unicamente en un explorador y finalmente que java es un lenguaje compilado mientras que javascript es interpretado
+                    </p>
+                    <p class="container__text">
+                        La unica similitud entre ellos radica en su nombre.
+                    </p>
+                </li>
+                <li>
+                    <span class="text--black">¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</span>
+                    <p class="container__text">
+                        El objeto Date tiene una gran variedad de metodos que nos permiten obtener la fecha y tiempo actual, así como manipularlos, primeramente tenemos el metodo Date() que es su constructor, donde si no le pasamos parametros nos indicará la fecha y hora actual, despues estarían metodos como getFullYear() que retorna el año actual, getDay() que retorna el numero del día de la semana desde 0 = domingo a 6 = sabado.
+                    </p>
+                    <p class="container__text">
+                        Despues tenemos metodos para establecer valores como setMonth(int x) que cambia el mes del 0 al 11, setHours(int x) cambia la hora y finalmente tenemos el metodo now() que obtiene el timestamp actual en milisegundos desde 1970.
+                    </p>
+                </li>
+                <li>
+                    <span class="text--black">¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</span>
+                    <p class="container__text">
+                        Un array tiene los metodos de indexOf(value) que retorna el index donde se encontró el elemento que se paso como parametro, asimismo esta también lastIndexOf(value) que retorna el indice de la ultima aparición del valor, después para agregar elementos estan metodos como push(value) que agrega el elemento nuevo al final, .pop() que elimina el ultimo elemento, .unshift(value) agrega un elemento al inicio y shift() borra ese elemento del inicio, igualmente esta el metodo reverse() que invierte el array y el metodo sort() para ordenar el array de forma ascendente o descendente.
+                    </p>
+                </li>
+                <li>
+                    <span class="text--black">¿Cómo se declara una variable con alcance local dentro de una función?</span>
+                    <p class="container__text">
+                        Eso sería usando let en lugar de var.
+                    </p>
+                </li>
+                <li>
+                    <span class="text--black">¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</span>
+                    <p class="container__text">
+                        Esto puede traer ciertas ventajas o desventajas según sea el caso.
+                    </p>
+                    <p class="container__text">
+                        Las ventajas serían que se puede utilizar esta variable en diferentes funciones sin necesidad de pasarla como argumento o declarar nuevas y de este modo tienes menos parametros en una función.
+                    </p>
+                    <p class="container__text">
+                        Sin embargo las desventajas son mucho mayores ya que hacer esto podría generar un riesgo de colisión y una dificultad para identificar errores mucho mayor así como que las variables globales pueden llegar a interferir con otras partes del codigo, haciendo que se dificulte más a la hora de ampliar el codigo.
+                    </p>
+                </li>
             </ul>
         </section>
         <section id="fuentes" class="container">
@@ -281,6 +323,26 @@
                 Equipo editorial de IONOS. (2019, July 18). Cómo comprimir CSS y mejorar el rendimiento de una web. IONOS Digital Guide. 
                 <a href="https://www.ionos.mx/digitalguide/paginas-web/diseno-web/comprimir-css-para-optimizar-los-tiempos-de-carga/">https://www.ionos.mx/digitalguide/paginas-web/diseno-web/comprimir-css-para-optimizar-los-tiempos-de-carga/</a>
             </p>
+            <p class="container__text">
+                Diferencias entre JavaScript y Java. (s. f.). Java. 
+                <a href="https://www.java.com/es/download/help/java_javascript_es.html">https://www.java.com/es/download/help/java_javascript_es.html</a>
+            </p>
+            <p class="container__text">
+                Números y fechas - JavaScript | MDN. (s. f.). MDN Web Docs. 
+                <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Numbers_and_strings">https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Numbers_and_strings</a>
+            </p>
+            <p class="container__text">
+                Colecciones indexadas - JavaScript | MDN. (s. f.). MDN Web Docs. 
+                <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Indexed_collections">https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Indexed_collections</a>
+            </p>
+            <p class="container__text">
+                
+                <a href=""></a>
+            </p>
+            <p class="container__text">
+                
+                <a href=""></a>
+            </p>
         </section>
 
         <section id="javascript" class="container">
@@ -307,6 +369,43 @@
             <button onclick="calcularConteo()" class="nav__button">Ejercicio 3</button>
             <input type="text" id="numeros" placeholder="Ej: -1, 0, 5, -3, 7, 0">
             <p id="resultado" class="container__text"></p>
+
+            <p class="container__text">Ingresa la matriz: cada fila en una línea y separa los números con comas.</p>
+            <button id="calcular" class="nav__button">Ejercicio 4</button>
+            <textarea id="matrizInput" rows="6" cols="30"></textarea>
+            <p class="container__text">Resultados:</p>
+            <p id="promedio" class="container__text"></p>
+
+            <button id="reverso" class="nav__button">Ejercicio 5</button>
+            <input id="numFive" type="text" placeholder="1417 --> 7141">
+            <p id="reverseNum" class="container__text"></p>
+
+            <div>
+                <h3 class="container__projectTitle">Problema Cuadrado, calcular area y perimetro:</h3>
+                <p class="container__text">
+                    Introducción al Problema:
+
+En este ejercicio de programación orientada a objetos, se plantea la creación de una clase denominada Cuadrado. El objetivo es modelar un cuadrado, definiendo sus características esenciales y comportamientos a través de atributos y métodos. La clase debe tener dos atributos:
+
+nombre: una cadena de texto que identifique al cuadrado.
+lado: un valor numérico que represente la longitud de uno de sus lados.
+Se requiere implementar los siguientes métodos:
+
+Calcular Área: Un método que devuelva el área del cuadrado, calculada como el cuadrado del valor del lado.
+Calcular Perímetro: Un método que devuelva el perímetro del cuadrado, obtenido multiplicando el lado por cuatro.
+toString: Un método que retorne una cadena de texto que incluya los atributos del objeto (nombre y lado) y el resultado de los cálculos del área y el perímetro.
+                </p>
+            </div>
+            <div>
+                <label for="nombreInput">Nombre:</label>
+                <input placeholder="Larry" type="text" id="nombreInput">
+            </div>
+            <div>
+                <label for="ladoInput">Lado:</label>
+                <input placeholder="9.5" type="number" id="ladoInput">
+            </div>
+            <button id="crearCuadrado" class="nav__button">Crear Cuadrado</button>
+            <p id="resultadoClase" class="container__text"></p>
         </section>
     </main>
 

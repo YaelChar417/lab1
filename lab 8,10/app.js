@@ -65,15 +65,21 @@ const html = `<!DOCTYPE html>
 //Lo que hace el for de label es que al hacer click te manda al input correspondiente
 //la etiqueta name hace que al mandar los datos a un servidor lleguen con ese valor, generalmente se pone name e id iguales
 const server = http.createServer((req, res) => {
-    if(req.method == "GET")
+    if(req.method == "GET" && (req.url == "agregar" || req.url == "/"))
     {
         console.log(req.url);
         res.setHeader('Content-Type', 'text/html');
         res.write(html);
         res.end();
-    }else if(req.method == "POST")
+    }else if(req.method == "POST" && req.url == "/agregar")
     {
-        
+
+    }else
+    {
+        res.statusCode = 404;
+        res.setHeader('Content-Type', 'text/html');
+        res.write("La pagina no existe");
+        res.end();
     }
     
 });

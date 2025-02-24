@@ -82,7 +82,16 @@ const server = http.createServer((req, res) => {
         res.end();
     }else if(req.method == "POST" && req.url == "/agregar")
     {
+        const datos_completos = [];
+        req.on('data', (data)=>{
+            console.log(data);
+            datos_completos.push(data);
+        });
 
+        req.on('end', () =>{
+            const string_datos_completos = Buffer.concat(datos_completos).toString();
+            console.log(string_datos_completos);
+        });
     }else
     {
         res.statusCode = 404;

@@ -56,22 +56,26 @@ const html = `<!DOCTYPE html>
     <h1>Holaaaaaaaaaaaaa</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, similique consectetur quis dignissimos repellat non doloribus eum omnis minima eos explicabo tenetur vitae, iste excepturi et eveniet repellendus ratione nesciunt.</p>
     <form action = "/agregar" method="POST">
-    <label>
-    <input type="text" placeholder="Bugambilia">
+    <label for="nombre">Nombre de la planta</label>
+    <input id="nombre" type="text" placeholder="Bugambilia" name="nombre">
+    <input type="submit" value="Enviar">
     </form>
 </body>
 </html>`
-
+//Lo que hace el for de label es que al hacer click te manda al input correspondiente
+//la etiqueta name hace que al mandar los datos a un servidor lleguen con ese valor, generalmente se pone name e id iguales
 const server = http.createServer((req, res) => {
-    if (req.url === '/') {
+    if(req.method == "GET")
+    {
+        console.log(req.url);
+        res.setHeader('Content-Type', 'text/html');
         res.write(html);
         res.end();
-    } else {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('Página no encontrada');
+    }else if(req.method == "POST")
+    {
+        
     }
+    
 });
 
-server.listen(3000, () => {
-    console.log(`Servidor corriendo en http://localhost:3000`);
-});
+server.listen(3000);

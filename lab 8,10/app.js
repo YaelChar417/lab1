@@ -72,9 +72,9 @@ const html_footer = `<footer>
 
 
 
-
+const plantas = [];
 const server = http.createServer((req, res) => {
-    if(req.method == "GET" && (req.url == "agregar" || req.url == "/"))
+    if(req.method == "GET" && (req.url == "/agregar" || req.url == "/"))
     {
         console.log(req.url);
         res.setHeader('Content-Type', 'text/html');
@@ -83,6 +83,7 @@ const server = http.createServer((req, res) => {
     }else if(req.method == "POST" && req.url == "/agregar")
     {
         const datos_completos = [];
+
         req.on('data', (data)=>{
             console.log(data);
             datos_completos.push(data);
@@ -90,7 +91,21 @@ const server = http.createServer((req, res) => {
 
         req.on('end', () =>{
             const string_datos_completos = Buffer.concat(datos_completos).toString();
-            console.log(string_datos_completos);
+            const planta_name = string_datos_completos.split('=')[1]; 
+            console.log(planta_name);
+
+            plantas.push(planta_name);
+            res.setHeader('Content-Type', 'text/html');
+            res.write(html_header);
+
+            for(const planta of plantas)
+            {
+                res.write(`<div>`);
+                res.write(planta);
+                res.write(`</div>`);
+            }
+            res.write(html_footer);
+            res.end();
         });
     }else
     {

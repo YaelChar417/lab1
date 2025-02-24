@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #F1E3D3;
+
+}
+
+.card{
+    width: 60%;
+    background-color: #E07A5F;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0009;
+}
+
+.card p{
+    font-size: 1rem;
+    padding: 20px;
+    text-wrap: balance;
+    padding-bottom: 20px;
+}
+
+.card h1{
+    font-size: 2.5rem;
+    padding: 0;
+}
+
+.card h3{
+    font-size: 1.7rem;
+    padding-top: 10px;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.card img{
+    border-radius: 50%;
+    border: 10px solid #690B22;
+    box-shadow: 0 0 10px #0009;
+    width: 300px;
+    margin-top: 10px;
+}
+
+.card form{
+    margin: auto;
+    background-color: #690B2255;
+    padding: 20px 0;
+    width: 60%;
+    border: none;
+    border-top: 5px solid #690B2299;
+    border-left: 5px solid #690B2299;
+    box-shadow: 0 0 8px #0009;
+}
+
+form label{
+    font-size: 1.2rem;
+    color: aliceblue;
+    font-size: bold;
+}
+
+.form__input{
+    width: 100px;
+    background-color: #690B22;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    color: aliceblue;
+}
+
+form select{
+    background-color: #690B22;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: aliceblue;
+}
+
+.card .short--img{
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+}
+
+.btn__container{
+    text-align: center;
+}
+
+.btn{
+    background-color: #690B22;
+    color: aliceblue;
+    font-size: 1.2rem;
+    margin: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 2px solid #30020d;
+    border-right: 2px solid #30020d;
+    cursor: pointer;
+    transition: background-color .3s, border-bottom .3s, border-right .3s, border-radius .3s, text-shadow .3s;
+}
+
+.tiny__img .tiny--img{
+    border: none;
+    width: 20px;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.btn:hover{
+    border-radius: 20px;
+    background-color: #861a35;
+    border-bottom: 2px solid #580c1e;
+    border-right: 2px solid #580c1e;
+    text-shadow: 0 0 5px #ccc;
+}
+
+.footer{
+    position: relative;
+    background-color: #1B4D3Ebb;
+    text-align: center;
+    height: 300px;
+}
+
+.footer h3{
+    font-size: 2rem;
+    padding-top: 10px;
+    color: aliceblue;
+}
+
+.footer p{
+    font-size: 1.5rem;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.footer a{
+    text-decoration: none;
+    color:#1B4D3Ecc;
+    transition: color .5s, text-shadow .5s;
+}
+
+.footer a:hover{
+    color: #1B4D3E;
+    text-shadow: 0 0 5px #fff;
+}

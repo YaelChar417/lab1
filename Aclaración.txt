@@ -1,0 +1,4 @@
+Hola profes, no sabía que los laboratorios debían ir en un solo repo, por ello añadi todos los demás a este repositorio que fue el original que hice, como quiera dejo los links a los repositorios donde originalmente puse estos laboratorios, con la fecha donde los trabaje para asegurar que las hice en la fecha que viene en mi malla, gracias por entender.
+Lab6: https://github.com/YaelChar417/lab6
+Lab7: https://github.com/YaelChar417/lab7
+Lab8: https://github.com/YaelChar417/lab8

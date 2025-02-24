@@ -45,7 +45,7 @@ console.log("Perimetro: " + cuadrado.calcularPerimetro());
 
 // Dirigir al usuario a una pagina web
 const http = require('http');
-const html = `<!DOCTYPE html>
+const html_header = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -54,22 +54,31 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
     <h1>Holaaaaaaaaaaaaa</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, similique consectetur quis dignissimos repellat non doloribus eum omnis minima eos explicabo tenetur vitae, iste excepturi et eveniet repellendus ratione nesciunt.</p>
-    <form action = "/agregar" method="POST">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, similique consectetur quis dignissimos repellat non doloribus eum omnis minima eos explicabo tenetur vitae, iste excepturi et eveniet repellendus ratione nesciunt.</p>`;
+
+const html_form = `<form action = "/agregar" method="POST">
     <label for="nombre">Nombre de la planta</label>
     <input id="nombre" type="text" placeholder="Bugambilia" name="nombre">
     <input type="submit" value="Enviar">
     </form>
-</body>
-</html>`
+</body>`;
 //Lo que hace el for de label es que al hacer click te manda al input correspondiente
 //la etiqueta name hace que al mandar los datos a un servidor lleguen con ese valor, generalmente se pone name e id iguales
+
+const html_footer = `<footer>
+<p>pagina hecha por Yael Charles Marin</p>
+<p>Construccion de software</p>
+</footer></html>`;
+
+
+
+
 const server = http.createServer((req, res) => {
     if(req.method == "GET" && (req.url == "agregar" || req.url == "/"))
     {
         console.log(req.url);
         res.setHeader('Content-Type', 'text/html');
-        res.write(html);
+        res.write(html_header + html_form + html_footer);
         res.end();
     }else if(req.method == "POST" && req.url == "/agregar")
     {
@@ -78,7 +87,9 @@ const server = http.createServer((req, res) => {
     {
         res.statusCode = 404;
         res.setHeader('Content-Type', 'text/html');
-        res.write("La pagina no existe");
+        res.write(html_header);
+        res.write(`<h1>Esta pagina no existe</h1>`)
+        res.write(html_footer)
         res.end();
     }
     

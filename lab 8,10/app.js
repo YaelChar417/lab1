@@ -45,10 +45,26 @@ console.log("Perimetro: " + cuadrado.calcularPerimetro());
 
 // Dirigir al usuario a una pagina web
 const http = require('http');
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Holaaaaaaaaaaaaa</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, similique consectetur quis dignissimos repellat non doloribus eum omnis minima eos explicabo tenetur vitae, iste excepturi et eveniet repellendus ratione nesciunt.</p>
+    <form action = "/agregar" method="POST">
+    <label>
+    <input type="text" placeholder="Bugambilia">
+    </form>
+</body>
+</html>`
 
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
-        res.writeHead(302, { 'Location': 'https://yaelchar417.github.io/familiaElric/' });
+        res.write(html);
         res.end();
     } else {
         res.writeHead(404, { 'Content-Type': 'text/plain' });

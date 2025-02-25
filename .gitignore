@@ -1,0 +1,5 @@
+#Node artificial files
+node_modules/
+dist/
+#Generate by Windows
+Thumbs.db

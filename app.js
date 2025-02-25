@@ -27,6 +27,8 @@ const html_footer = `<footer>
 <p>Construccion de software</p>
 </footer></html>`;
 
+const plantas = [];
+
 //Middleware
 app.use((req, res, next) => {
     console.log('Middleware!');
@@ -37,7 +39,12 @@ app.use((req, res, next) => {
 
 // app.get registra un middleware que solo responde a peticiones HTTP tipo GET
 app.get('/plantas/agregar',(req, res, next) => {
-    res.send(html_header + html_form + html_footer)
+    res.send(html_header + html_form + html_footer);
+});
+
+// app.get registra un middleware que solo responde a peticiones HTTP tipo post
+app.post('/plantas/agregar',(req, res, next) => {
+    res.send(html_header + html_form + html_footer);
 });
 
 app.use((req, res, next) => {

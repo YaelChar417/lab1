@@ -4,7 +4,7 @@
   "description": "Laboratorios TC2005B feb-jun 2025 QRO",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon",
+    "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/YaelChar417/lab1#readme",
   "devDependencies": {
     "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
   }
 }

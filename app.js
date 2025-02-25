@@ -35,7 +35,8 @@ app.use((req, res, next) => {
     next(); 
 });
 
-app.use('/plantas/agregar',(req, res, next) => {
+// app.get registra un middleware que solo responde a peticiones HTTP tipo GET
+app.get('/plantas/agregar',(req, res, next) => {
     res.send(html_header + html_form + html_footer)
 });
 

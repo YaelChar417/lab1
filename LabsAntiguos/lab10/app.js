@@ -74,6 +74,17 @@ const server = http.createServer((req, res) => {
     {
         res.setHeader('Content-Type', 'text/html');
         res.write(html_header + html_comestible + html_footer);
+        res.end();
+    }else if(req.method == "POST" && req.url == "/comestible/agregar")
+    {
+        res.setHeader('Content-Type', 'text/html');
+        res.write('<p>Estas en la ruta /comestible/agregar</p>')
+        res.end();
+    } else if(req.method == "GET" && (req.url == '/inicio' || req.url == '/'))
+    {
+        res.setHeader('Content-Type', 'text/html');
+        res.write('<p>Estas en la ruta inicio o localhost:3000</p>')
+        res.end();
     }else
     {
         res.statusCode = 404;

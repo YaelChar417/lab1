@@ -11,7 +11,7 @@ const html_header = `<!DOCTYPE html>
     <h1>Holaaaaaaaaaaaaa</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, similique consectetur quis dignissimos repellat non doloribus eum omnis minima eos explicabo tenetur vitae, iste excepturi et eveniet repellendus ratione nesciunt.</p>`;
 
-const html_form = `<form action = "/agregar" method="POST">
+const html_ornato = `<form action = "/ornato/agregar" method="POST">
     <label for="nombre">Nombre de la planta</label>
     <input id="nombre" type="text" placeholder="Bugambilia" name="nombre">
     <input type="submit" value="Enviar">
@@ -29,13 +29,13 @@ const html_footer = `<footer>
 
 const plantas = [];
 const server = http.createServer((req, res) => {
-    if(req.method == "GET" && (req.url == "/agregar" || req.url == "/"))
+    if(req.method == "GET" && (req.url == "/ornato/agregar" || req.url == "/ornato"))
     {
         console.log(req.url);
         res.setHeader('Content-Type', 'text/html');
-        res.write(html_header + html_form + html_footer);
+        res.write(html_header + html_ornato + html_footer);
         res.end();
-    }else if(req.method == "POST" && req.url == "/agregar")
+    }else if(req.method == "POST" && req.url == "/ornato/agregar")
     {
         const datos_completos = [];
 
@@ -62,6 +62,10 @@ const server = http.createServer((req, res) => {
             res.write(html_footer);
             res.end();
         });
+    }else if (req.method == "GET" && (req.url == '/comestible/agregar') || req.url == '/comestible')
+    {
+        res.setHeader('Content-Type', 'text/html');
+        res.write('<h1>Hola soy comestible</h1>');
     }else
     {
         res.statusCode = 404;

@@ -121,6 +121,7 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-Type', 'text/html');
         res.write(html_header);
         res.write(`<h1>Esta pagina no existe</h1>`)
+        res.write(`<img width="400px" src="https://media.tenor.com/WU_r--BFSWUAAAAM/404-404error.gif">`);
         res.write(html_footer)
         res.end();
     }

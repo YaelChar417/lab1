@@ -35,7 +35,8 @@ const html_footer = `<footer>
 
 
 
-const plantas = [];
+const plantas_decorativas = [];
+const plantas_comestibles = [];
 const server = http.createServer((req, res) => {
     if(req.method == "GET" && (req.url == "/ornato/agregar" || req.url == "/ornato"))
     {
@@ -57,11 +58,11 @@ const server = http.createServer((req, res) => {
             const planta_name = string_datos_completos.split('=')[1]; 
             console.log(planta_name);
 
-            plantas.push(planta_name);
+            plantas_decorativas.push(planta_name);
             res.setHeader('Content-Type', 'text/html');
             res.write(html_header);
 
-            for(const planta of plantas)
+            for(const planta of plantas_decorativas)
             {
                 res.write(`<div>`);
                 res.write(planta);
@@ -77,9 +78,30 @@ const server = http.createServer((req, res) => {
         res.end();
     }else if(req.method == "POST" && req.url == "/comestible/agregar")
     {
-        res.setHeader('Content-Type', 'text/html');
-        res.write('<p>Estas en la ruta /comestible/agregar</p>')
-        res.end();
+        const datos_completos = [];
+
+        req.on('data', (data)=>{
+            datos_completos.push(data);
+        });
+
+        req.on('end', () =>{
+            const string_datos_completos = Buffer.concat(datos_completos).toString();
+            const planta_name = string_datos_completos.split('=')[1]; 
+            console.log(planta_name);
+
+            plantas_comestibles.push(planta_name);
+            res.setHeader('Content-Type', 'text/html');
+            res.write(html_header);
+
+            for(const planta of plantas_comestibles)
+            {
+                res.write(`<div>`);
+                res.write(planta);
+                res.write(`</div>`);
+            }
+            res.write(html_footer);
+            res.end();
+        });
     } else if(req.method == "GET" && (req.url == '/inicio' || req.url == '/'))
     {
         res.setHeader('Content-Type', 'text/html');

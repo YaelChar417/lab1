@@ -11,7 +11,7 @@ const html_header = `<!DOCTYPE html>
     <h1>Holaaaaaaaaaaaaa</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, similique consectetur quis dignissimos repellat non doloribus eum omnis minima eos explicabo tenetur vitae, iste excepturi et eveniet repellendus ratione nesciunt.</p>`;
 
-const html_ornato = `<form action="/ornato/agregar" method="POST">
+const html_ornato = `<img width="300px" src="https://arqin.pe/wp-content/uploads/2023/04/creative-composition-of-botanic-home-interior-desi-2022-12-07-04-25-48-utc-1.jpg"><form action="/ornato/agregar" method="POST">
     <label for="nombreDeco">Nombre de la planta decorativa</label>
     <input id="nombreDeco" type="text" placeholder="Bugambilia" name="nombreDeco">
     <input type="submit" value="Enviar">
@@ -20,7 +20,13 @@ const html_ornato = `<form action="/ornato/agregar" method="POST">
 //Lo que hace el for de label es que al hacer click te manda al input correspondiente
 //la etiqueta name hace que al mandar los datos a un servidor lleguen con ese valor, generalmente se pone name e id iguales
 
-const html_comestible = ` </body>`;
+const html_comestible = `<img width="300px" src="https://cdn0.uncomo.com/es/posts/2/0/4/las_verduras_de_primavera_53402_300_150.jpg">
+    <form action="/comestible/agregar" method="POST">
+        <label for="nombreCome">Nombre de una planta comestible</label>
+        <input id="nombreCome" type="text" placeholder="Jitomate" name="nombreCome">
+        <input type="submit" value="Enviar">
+    </form>
+</body>`;
 
 const html_footer = `<footer>
 <p>pagina hecha por Yael Charles Marin</p>
@@ -67,7 +73,7 @@ const server = http.createServer((req, res) => {
     }else if (req.method == "GET" && (req.url == '/comestible/agregar') || req.url == '/comestible')
     {
         res.setHeader('Content-Type', 'text/html');
-        res.write('<h1>Hola soy comestible</h1>');
+        res.write(html_header + html_comestible + html_footer);
     }else
     {
         res.statusCode = 404;

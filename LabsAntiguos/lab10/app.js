@@ -11,14 +11,16 @@ const html_header = `<!DOCTYPE html>
     <h1>Holaaaaaaaaaaaaa</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, similique consectetur quis dignissimos repellat non doloribus eum omnis minima eos explicabo tenetur vitae, iste excepturi et eveniet repellendus ratione nesciunt.</p>`;
 
-const html_ornato = `<form action = "/ornato/agregar" method="POST">
-    <label for="nombre">Nombre de la planta</label>
-    <input id="nombre" type="text" placeholder="Bugambilia" name="nombre">
+const html_ornato = `<form action="/ornato/agregar" method="POST">
+    <label for="nombreDeco">Nombre de la planta decorativa</label>
+    <input id="nombreDeco" type="text" placeholder="Bugambilia" name="nombreDeco">
     <input type="submit" value="Enviar">
     </form>
 </body>`;
 //Lo que hace el for de label es que al hacer click te manda al input correspondiente
 //la etiqueta name hace que al mandar los datos a un servidor lleguen con ese valor, generalmente se pone name e id iguales
+
+const html_comestible = ` </body>`;
 
 const html_footer = `<footer>
 <p>pagina hecha por Yael Charles Marin</p>

@@ -28,6 +28,14 @@ const html_comestible = `<img width="300px" src="https://cdn0.uncomo.com/es/post
     </form>
 </body>`;
 
+const html_landing = `<img width="1000px" src="https://i.gifer.com/8KQ5.gif">
+    <h2>Estas en la sección de inicio, se bienvenido</h2>
+    <p>Esta pagina fue hecha con mucho amor a las plantas <3</p>
+    <p>Mi planta favorita es el girasol</p>
+    <p>Para ver más funcionalidades usa las rutas <strong>/comestible - /ornato</strong></p>
+    <img width="200px" src="https://cdn.pixabay.com/animation/2024/03/04/16/52/16-52-07-671_512.gif">
+</body>`
+
 const html_footer = `<footer>
 <p>pagina hecha por Yael Charles Marin</p>
 <p>Construccion de software</p>
@@ -105,7 +113,7 @@ const server = http.createServer((req, res) => {
     } else if(req.method == "GET" && (req.url == '/inicio' || req.url == '/'))
     {
         res.setHeader('Content-Type', 'text/html');
-        res.write('<p>Estas en la ruta inicio o localhost:3000</p>')
+        res.write(html_header + html_landing + html_footer)
         res.end();
     }else
     {

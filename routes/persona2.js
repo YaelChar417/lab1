@@ -71,7 +71,7 @@ router.get('/',(req, res, next) => {
     res.send(html_header + html_form + html_footer);
 });
 
-// app.get registra un middleware que solo responde a peticiones HTTP tipo post
+// app.post registra un middleware que solo responde a peticiones HTTP tipo post
 router.post('/',(req, res, next) => {
     console.log(req.body);
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 const html_header = `<!DOCTYPE html>
 <html lang="en" class="theme-dark">
@@ -64,37 +65,33 @@ const html_form = `<div class="content">
 //Lo que hace el for de label es que al hacer click te manda al input correspondiente
 //la etiqueta name hace que al mandar los datos a un servidor lleguen con ese valor, generalmente se pone name e id iguales
 
-
 const html_footer = `<footer class="footer">
 <div class="content has-text-centered">
 <p>pagina hecha por Yael Charles Marin</p>
 <p>Construccion de software</p>
 </div></footer></html>`;
 
-const personaPhotos = [];
+const html_aprovado = `<div class=card><div class="card-content">Dirección guardada exitosamente</div></div>`
+const html_rechazado = `<div class=card><div class="card-content">Ocurrió un error al mandar la dirección</div></div>`
 
 // app.get registra un middleware que solo responde a peticiones HTTP tipo GET
 router.get('/',(req, res, next) => {
     res.send(html_header + html_form + html_footer);
 });
 
-// app.get registra un middleware que solo responde a peticiones HTTP tipo post
+// app.post registra un middleware que solo responde a peticiones HTTP tipo post
 router.post('/',(req, res, next) => {
     console.log(req.body);
-
-    personaPhotos.push(req.body.urlP4);
-    let html = html_header;
-    html += `<div class="columns">`
-    for(const img of personaPhotos)
-    {
-        html += `<div class="column"><figure class="image is-3by2"><img alt="img no soportada" src="`;
-        html += img;
-        html += `"/></figure></div>`;
-    }
-    html += `</div>`;
-    html += html_footer;
-
-    res.send(html);
+    const address = req.body.addrP5;
+    fs.appendFile('datos.txt', address + '\n', (err) => {
+        if(err)
+        {
+            return res.send(html_header + html_form + html_rechazado + html_footer);
+        }else
+        {
+            res.send(html_header + html_form + html_aprovado + html_footer);
+        }
+    });
 });
 
 module.exports = router;

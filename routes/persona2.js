@@ -12,7 +12,7 @@ const html_header = `<!DOCTYPE html>
     <h1>Holaaaaaaaaaaaaa</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, similique consectetur quis dignissimos repellat non doloribus eum omnis minima eos explicabo tenetur vitae, iste excepturi et eveniet repellendus ratione nesciunt.</p>`;
 
-const html_form = `<form action="/plantas/" method="POST">
+const html_form = `<form action="/persona2/" method="POST">
     <label for="nombre">Nombre de la planta</label>
     <input id="nombre" type="text" placeholder="Bugambilia" name="nombre">
     <input type="submit" value="Enviar">
@@ -27,7 +27,7 @@ const html_footer = `<footer>
 <p>Construccion de software</p>
 </footer></html>`;
 
-const plantas = [];
+const personaNames = [];
 
 // app.get registra un middleware que solo responde a peticiones HTTP tipo GET
 router.get('/',(req, res, next) => {
@@ -38,13 +38,13 @@ router.get('/',(req, res, next) => {
 router.post('/',(req, res, next) => {
     console.log(req.body);
 
-    plantas.push(req.body.nombre);
+    personaNames.push(req.body.nombre);
     let html = html_header;
     
-    for(const planta of plantas)
+    for(const persona of personaNames)
     {
         html += `<div>`
-        html += planta;
+        html += persona;
         html += `</div>`
     }
     

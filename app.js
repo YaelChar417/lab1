@@ -1,10 +1,15 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const fs = require('fs');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.urlencoded({ extended: true }));
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 const persona2Routes = require('./routes/persona2');
 app.use('/persona2', persona2Routes);
@@ -20,6 +25,9 @@ app.use('/persona5', persona5Routes);
 
 const preguntaRoutes = require('./routes/pregunta');
 app.use('/preguntas', preguntaRoutes);
+
+const pruebaRoutes = require('./routes/prueba12');
+app.use('/prueba12', pruebaRoutes);
 
 // Debe ir al final sino todas las rutas las tomaría como error
 app.use((req, res, next) => {

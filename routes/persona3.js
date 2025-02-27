@@ -30,7 +30,7 @@ const html_content= `<p>El juego sigue a un estudiante de secundaria que regresa
     </div>
     <div class="column">
     <figure class="image is-3by2">
-        <img src="https://i.ytimg.com/vi/iEcc86nntKQ/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAt6-7nUIsixwdVeMlWuC34i7v6vA" />
+        <img src="https://i.ytimg.com/vi/iEcc86nntKQ/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAt6-7nUIsixwdVeMlWuC34i7v6vA"/>
     </figure>
     </div>
     </div>

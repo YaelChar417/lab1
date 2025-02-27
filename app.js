@@ -10,4 +10,7 @@ app.use('/persona2', persona2Routes);
 const persona3Routes = require('./routes/persona3');
 app.use('/persona3', persona3Routes);
 
+const persona4Routes = require('./routes/persona4');
+app.use('/persona4', persona4Routes);
+
 app.listen(3000);

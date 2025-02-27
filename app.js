@@ -18,4 +18,12 @@ app.use('/persona4', persona4Routes);
 const persona5Routes = require('./routes/persona5');
 app.use('/persona5', persona5Routes);
 
+const preguntaRoutes = require('./routes/pregunta');
+app.use('/preguntas', preguntaRoutes);
+
+// Debe ir al final sino todas las rutas las tomaría como error
+app.use((req, res, next) => {
+    res.status(404).send('Error 404: Ruta no encontrada');
+});
+
 app.listen(3000);

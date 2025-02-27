@@ -7,5 +7,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 const persona2Routes = require('./routes/persona2');
 app.use('/persona2', persona2Routes);
 
+const persona3Routes = require('./routes/persona3');
+app.use('/persona3', persona3Routes);
 
 app.listen(3000);

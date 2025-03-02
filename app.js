@@ -27,7 +27,7 @@ const preguntaRoutes = require('./routes/pregunta');
 app.use('/preguntas', preguntaRoutes);
 
 const pruebaRoutes = require('./routes/prueba12');
-app.use('/prueba12', pruebaRoutes);
+app.use('/static', pruebaRoutes);
 
 // Debe ir al final sino todas las rutas las tomaría como error
 app.use((req, res, next) => {

@@ -1,0 +1,17 @@
+<%- include('includes/persona5/_header') %>
+<%- include('includes/_navbar') %>
+<%- include('includes/persona5/_content') %>
+<div class="content">
+    <div class="card">
+        <div class="card-content">
+            <div class="columns">
+            <% for(const data of datos){ %>
+                <div class="column">
+                <%= data %>
+                </div>
+            <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('includes/_footer') %>

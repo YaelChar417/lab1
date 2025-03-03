@@ -4,4 +4,4 @@ dist/
 #Generate by Windows
 Thumbs.db
 #archivos de texto
-.txt
+*.txt

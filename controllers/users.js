@@ -14,5 +14,5 @@ exports.get_logout = (req, res, next) => {
 exports.post_login = (req, res, next) => {
     req.session.isLoggedIn = true;
     req.session.username = req.body.username;
-    res.redirect('/persona2')
+    res.redirect('/persona2/agregar');
 };

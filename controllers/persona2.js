@@ -2,7 +2,10 @@ const Persona = require('../models/persona2')
 
 exports.get_agregar = (req, res, next) => {
     console.log(req.session.username);
-    res.render('agregar_persona2');
+    res.render('agregar_persona2', {
+        isLoggedIn: req.session.isLoggedIn || false,
+        username: req.session.username || '',
+    });
 };
 
 exports.post_agregar = (req, res, next) => {
@@ -14,6 +17,8 @@ exports.post_agregar = (req, res, next) => {
 
 exports.get_root = (req, res, next) => {
     res.render('lista_persona2', {
+        isLoggedIn: req.session.isLoggedIn || false,
+        username: req.session.username || '',
         personas: Persona.fetchAll(),
     });
 };

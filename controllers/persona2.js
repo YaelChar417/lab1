@@ -1,6 +1,7 @@
 const Persona = require('../models/persona2')
 
 exports.get_agregar = (req, res, next) => {
+    console.log(req.session.username);
     res.render('agregar_persona2');
 };
 

@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const preguntaControllers = require('../controllers/pregunta');
 
 // app.get registra un middleware que solo responde a peticiones HTTP tipo GET
-router.get('/',(req, res, next) => {
-    res.render('ver_preguntas')
-});
+router.get('/', preguntaControllers.get_preguntas);
 
 module.exports = router;

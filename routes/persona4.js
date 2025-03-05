@@ -1,21 +1,13 @@
 const express = require('express');
 const router = express.Router();
-
-
-const personaPhotos = [];
+const persona4Controller = require('../controllers/persona4')
 
 // app.get registra un middleware que solo responde a peticiones HTTP tipo GET
-router.get('/',(req, res, next) => {
-    res.render('agregar_persona4')
-});
+router.get('/agregar', persona4Controller.get_agregar);
 
 // app.post registra un middleware que solo responde a peticiones HTTP tipo post
-router.post('/agregar',(req, res, next) => {
-    console.log(req.body);
-    personaPhotos.push(req.body.urlP4);
-    res.render('lista_persona4', {
-        fotos: personaPhotos,
-    });
-});
+router.post('/agregar', persona4Controller.post_agregar);
+
+router.get('/', persona4Controller.get_root);
 
 module.exports = router;

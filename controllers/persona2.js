@@ -30,7 +30,7 @@ exports.get_root = (req, res, next) => {
 
     if(req.session.info){req.session.info = ''};
 
-    Persona.fetchAll()
+    Persona.fetch(req.params.id)
         .then(([rows, fieldData]) => {
             console.log(fieldData);
             console.log(rows);

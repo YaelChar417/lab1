@@ -13,7 +13,7 @@
             <div class="columns">
             <% for(const persona of personas){ %>
                     <div class="column">
-                    <%= persona.nombre %>
+                    <a href="/persona2/<%= persona.id %>"><%= persona.nombre %></a>
                     </div>
             <% } %>
             </div>

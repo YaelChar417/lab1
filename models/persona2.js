@@ -18,4 +18,18 @@ module.exports = class Persona {
         return db.execute('SELECT * FROM persona2');
     }
 
+    static fetchOne(id){
+        return db.execute('SELECT * FROM persona2 WHERE id = ?', [id]);
+    }
+
+    static fetch(id){
+        if(id)
+        {
+            return this.fetchOne(id);
+        }else
+        {
+            return this.fetchAll();
+        }
+    }
+
 }

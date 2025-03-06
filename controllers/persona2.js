@@ -11,16 +11,30 @@ exports.get_agregar = (req, res, next) => {
 exports.post_agregar = (req, res, next) => {
     console.log(req.body);
     const persona2 = new Persona(req.body.nombre);
-    persona2.save();
-    res.setHeader('Set-Cookie', `ultima_sesion=${persona2.nombre}`);
-    res.redirect('/persona2/');
+    persona2.save()
+        .then(() => {
+            console.log("persona guardada");
+            req.session.info = `La persona ${persona2.nombre} ha sido creada con exito`;
+            res.setHeader('Set-Cookie', `ultima_sesion=${persona2.nombre}`);
+            res.redirect('/persona2/');
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    
 };
 
 exports.get_root = (req, res, next) => {
-    console.log(req.get('Cookie'))
+    console.log(req.get('Cookie'));
+    const mensaje = req.session.info || '';
+    if(req.session.info)
+    {
+        req.session.info = '';
+    }
     res.render('lista_persona2', {
         isLoggedIn: req.session.isLoggedIn || false,
         username: req.session.username || '',
         personas: Persona.fetchAll(),
+        info: mensaje,
     });
 };

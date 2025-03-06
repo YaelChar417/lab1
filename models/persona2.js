@@ -10,13 +10,7 @@ module.exports = class Persona {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        db.execute('INSERT INTO persona2(nombre) VALUES (?)', [this.nombre])
-            .then(() => {
-                console.log("persona guardada");
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        return db.execute('INSERT INTO persona2(nombre) VALUES (?)', [this.nombre]);
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.

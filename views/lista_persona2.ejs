@@ -1,5 +1,12 @@
 <%- include('includes/persona2/_header') %>
 <%- include('includes/_navbar') %>
+
+<% if(info != '') { %>
+    <div class="notification is-info">
+        <%= info %>
+    </div>
+<% } %>
+
 <div class="content">
     <div class="card">
         <div class="card-content">

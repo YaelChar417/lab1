@@ -27,14 +27,21 @@ exports.post_agregar = (req, res, next) => {
 exports.get_root = (req, res, next) => {
     console.log(req.get('Cookie'));
     const mensaje = req.session.info || '';
-    if(req.session.info)
-    {
-        req.session.info = '';
-    }
-    res.render('lista_persona2', {
-        isLoggedIn: req.session.isLoggedIn || false,
-        username: req.session.username || '',
-        personas: Persona.fetchAll(),
-        info: mensaje,
-    });
+
+    if(req.session.info){req.session.info = ''};
+
+    Persona.fetchAll()
+        .then(([rows, fieldData]) => {
+            console.log(fieldData);
+            console.log(rows);
+            res.render('lista_persona2', {
+                isLoggedIn: req.session.isLoggedIn || false,
+                username: req.session.username || '',
+                personas: rows,
+                info: mensaje,
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 };

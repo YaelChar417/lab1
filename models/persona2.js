@@ -1,3 +1,4 @@
+const db = require('../util/database');
 const personaNames = [];
 
 module.exports = class Persona {
@@ -9,7 +10,13 @@ module.exports = class Persona {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        personaNames.push(this);
+        db.execute('INSERT INTO persona2(nombre) VALUES (?)', [this.nombre])
+            .then(() => {
+                console.log("persona guardada");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.

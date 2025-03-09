@@ -27,7 +27,7 @@ exports.get_root = (req, res, next) => {
 
     if(req.session.info){req.session.info = ''}
 
-    Place.fecth(req.params.id)
+    Place.fetch(req.params.id)
         .then(([rows, fieldData]) => {
             console.log(fieldData);
             console.log(rows);
@@ -37,6 +37,39 @@ exports.get_root = (req, res, next) => {
                 lugares: rows,
                 info: mensaje,
             })
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
+exports.get_edit = (req, res, next) => {
+    const id = req.params.id;
+    Place.fetchOne(id)
+        .then(([rows, fieldData]) => {
+            if (rows.length > 0) {
+                res.render('editar_persona5', {
+                    place: rows[0],
+                    isLoggedIn: req.session.isLoggedIn || false,
+                    username: req.session.username || '',
+                });
+            } else {
+                res.redirect('/persona5');
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
+// Procesa la actualización del registro
+exports.post_edit = (req, res, next) => {
+    const id = req.body.id;
+    const newName = req.body.nombre;
+    Place.updateOne(id, newName)
+        .then(() => {
+            req.session.info = `La dirección se ha actualizado correctamente`;
+            res.redirect('/persona5');
         })
         .catch((err) => {
             console.log(err);

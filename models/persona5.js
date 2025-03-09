@@ -17,7 +17,7 @@ module.exports = class Place {
         return db.execute('SELECT * FROM persona5 WHERE id = ?', [id]);
     }
 
-    static fecth(id){
+    static fetch(id){
         if(id)
         {
             return this.fetchOne(id);
@@ -25,5 +25,9 @@ module.exports = class Place {
         {
             return this.fetchAll();
         }
+    }
+
+    static updateOne(id, newName){
+        return db.execute('UPDATE persona5 SET nombre = ? WHERE id = ?', [newName,id]);
     }
 };

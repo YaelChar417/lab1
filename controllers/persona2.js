@@ -16,7 +16,7 @@ exports.post_agregar = (req, res, next) => {
             console.log("persona guardada");
             req.session.info = `La persona ${persona2.nombre} ha sido creada con exito`;
             res.setHeader('Set-Cookie', `ultima_sesion=${persona2.nombre}`);
-            res.redirect('/persona2/');
+            res.redirect('/persona2');
         })
         .catch((err) => {
             console.log(err);

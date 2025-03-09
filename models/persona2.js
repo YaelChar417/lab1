@@ -1,5 +1,4 @@
 const db = require('../util/database');
-const personaNames = [];
 
 module.exports = class Persona {
 

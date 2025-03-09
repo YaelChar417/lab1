@@ -1,26 +1,29 @@
-const fs = require('fs');
-const path = require('path');
+const db = require('../util/database');
 
 module.exports = class Place {
-    static filePath = path.join(__dirname, '..', 'datos.txt');
-
-    static getLugares() {
-        try {
-            const data = fs.readFileSync(this.filePath, 'utf8'); // Usar método síncrono
-            return data.split('\n').filter(linea => linea.trim() !== '');
-        } catch (error) {
-            console.error('Error al leer el archivo:', error);
-            return []; // Si hay un error, devolvemos una lista vacía
-        }
+    constructor(mi_nombre){
+        this.nombre = mi_nombre;
+    }
+    
+    save(){
+        return db.execute('INSERT INTO persona5(nombre) VALUES (?)', [this.nombre]);
     }
 
-    static agregarLugar(address) {
-        try {
-            fs.appendFileSync(this.filePath, address + '\n'); // Usar método síncrono
-            return true; // Indica que se guardó correctamente
-        } catch (error) {
-            console.error('Error en modelo:', error);
-            return false; // Indica que ocurrió un error
+    static fetchAll(){
+        return db.execute('SELECT * FROM persona5');
+    }
+
+    static fetchOne(id){
+        return db.execute('SELECT * FROM persona5 WHERE id = ?', [id]);
+    }
+
+    static fecth(id){
+        if(id)
+        {
+            return this.fetchOne(id);
+        }else
+        {
+            return this.fetchAll();
         }
     }
 };

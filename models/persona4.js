@@ -29,4 +29,4 @@ module.exports = class Album {
             return this.fetchAll();
         }
     }
-}
+};

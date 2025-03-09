@@ -30,5 +30,4 @@ module.exports = class Persona {
             return this.fetchAll();
         }
     }
-
-}
+};

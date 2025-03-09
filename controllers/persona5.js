@@ -1,30 +1,44 @@
 const Place = require('../models/persona5');
 
 exports.get_agregar = (req, res, next) => {
+    console.log(req.session.username)
     res.render('agregar_persona5', {
         isLoggedIn: req.session.isLoggedIn || false,
         username: req.session.username || '',
     });
 };
 
-exports.get_lugares = (req, res, next) => {
-    const datos = Place.getLugares();
-
-    res.render('ver_persona5', { 
-        datos: datos,
-        isLoggedIn: req.session.isLoggedIn || false,
-        username: req.session.username || '',
-    });
+exports.post_agregar = (req, res, next) => {
+    console.log(req.body);
+    const lugar = new Place(req.body.addrP5)
+    lugar.save()
+        .then(() => {
+            console.log("direccion guardada");
+            req.session.info = `La direccion ${lugar.nombre} ha sido guardada con exito`;
+            res.redirect('/persona5');
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 };
 
-exports.post_agregar = (req, res, next) => {
-    const address = req.body.addrP5;
-    const resultado = Place.agregarLugar(address);
+exports.get_root = (req, res, next) => {
+    const mensaje = req.session.info || '';
 
-    if (resultado) {
-        res.redirect('/persona5/agregar');
-    } else {
-        console.log('Error en controllers');
-        res.send('Ocurrió un error al guardar los datos :(');
-    }
+    if(req.session.info){req.session.info = ''}
+
+    Place.fecth(req.params.id)
+        .then(([rows, fieldData]) => {
+            console.log(fieldData);
+            console.log(rows);
+            res.render('ver_persona5', {
+                isLoggedIn: req.session.isLoggedIn || false,
+                username: req.session.username || '',
+                lugares: rows,
+                info: mensaje,
+            })
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 };

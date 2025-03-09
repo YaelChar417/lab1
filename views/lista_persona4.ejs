@@ -1,14 +1,23 @@
 <%- include('includes/persona4/_header') %>
 <%- include('includes/_navbar') %>
+
+<% if(info != '') { %>
+    <div class="notification is-info">
+        <%= info %>
+    </div>
+<% } %>
+
 <div class="content">
     <div class="card">
         <div class="card-content">
             <div class="columns">
             <% for(const img of fotos){ %>
                     <div class="column">
-                        <figure class="image is-3by2">
-                            <img alt="img no soportada" src="<%= img.url %>">
-                        </figure>
+                        <a href="/persona4/<%= img.id %>">
+                            <figure class="image is-3by2">
+                                <img alt="img no soportada" src="<%= img.url %>">
+                            </figure>
+                        </a>
                     </div>
                 <% } %>
             </div>

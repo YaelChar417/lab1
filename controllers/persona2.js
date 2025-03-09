@@ -28,7 +28,7 @@ exports.get_root = (req, res, next) => {
     console.log(req.get('Cookie'));
     const mensaje = req.session.info || '';
 
-    if(req.session.info){req.session.info = ''};
+    if(req.session.info){req.session.info = ''}
 
     Persona.fetch(req.params.id)
         .then(([rows, fieldData]) => {

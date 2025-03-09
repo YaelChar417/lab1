@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-03-2025 a las 20:04:08
+-- Tiempo de generación: 09-03-2025 a las 18:31:44
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -37,9 +37,37 @@ CREATE TABLE `persona2` (
 --
 
 INSERT INTO `persona2` (`id`, `nombre`) VALUES
-(1, '0'),
-(2, '0'),
-(3, '0');
+(4, 'Arsene'),
+(5, 'kushinada'),
+(6, 'Jinete blanco'),
+(7, 'Izanagui'),
+(8, 'Satan'),
+(9, 'pixie'),
+(10, 'Oni'),
+(11, 'Ukobach');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `persona4`
+--
+
+CREATE TABLE `persona4` (
+  `id` int(11) NOT NULL,
+  `url` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `persona5`
+--
+
+CREATE TABLE `persona5` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Índices para tablas volcadas
@@ -52,6 +80,18 @@ ALTER TABLE `persona2`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `persona4`
+--
+ALTER TABLE `persona4`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `persona5`
+--
+ALTER TABLE `persona5`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -59,7 +99,19 @@ ALTER TABLE `persona2`
 -- AUTO_INCREMENT de la tabla `persona2`
 --
 ALTER TABLE `persona2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `persona4`
+--
+ALTER TABLE `persona4`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `persona5`
+--
+ALTER TABLE `persona5`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

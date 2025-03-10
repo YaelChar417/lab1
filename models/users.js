@@ -9,7 +9,7 @@ module.exports = class User{
     save(){
         return bcrypt.hash(this.password, 12).then((password_cifrado) => {
             return db.execute('INSERT INTO usuarios(username, password) VALUES (?, ?)', 
-                [this.nombre, password_cifrado]);
+                [this.username, password_cifrado]);
         })
         .catch((err) => {
             console.log(err);
@@ -20,14 +20,14 @@ module.exports = class User{
         return db.execute('SELECT * FROM usuarios');
     }
     
-    static fetchOne(id){
-        return db.execute('SELECT * FROM usuarios WHERE id = ?', [id]);
+    static fetchOne(username){
+        return db.execute('SELECT * FROM usuarios WHERE username = ?', [username]);
     }
     
-    static fetch(id){
-        if(id)
+    static fetch(username){
+        if(username)
         {
-            return this.fetchOne(id);
+            return this.fetchOne(username);
         }else
         {
             return this.fetchAll();

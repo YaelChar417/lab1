@@ -11,7 +11,6 @@ router.post('/agregar', persona5Controller.post_agregar);
 router.get('/editar/:id', persona5Controller.get_edit);
 router.post('/editar', persona5Controller.post_edit);
 
-
 router.get('/:id', persona5Controller.get_root)
 
 router.get('/', persona5Controller.get_root);

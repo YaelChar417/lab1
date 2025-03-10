@@ -9,6 +9,7 @@ exports.get_login = (req, res, next) => {
         username: req.session.username || '',
         isNew: false,
         info: mensaje,
+        //csrfToken: req.csrfToken,
     });
 };
 
@@ -60,6 +61,7 @@ exports.get_signup = (req, res, next) => {
         username: req.session.username || '',
         isNew: true,
         info: mensaje,
+        //csrfToken: req.csrfToken,
     });
 };
 

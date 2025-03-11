@@ -57,13 +57,24 @@
                 </li>
             </ul>
 
-            <h2>¿¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h2>
+            <h2>¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h2>
             <p>Cuenta con las ventajas propias del modelo mvc la cual hace que se separen las funciones entre las rutas y controladores teniendo así un control para arreglar errores relacionados con la base de datos, además de que brinda mayor seguridad debido a que reduce las inyecciones SQL   </p>
             <p> Aguilar, J. M. (2023, 17 noviembre). ¿Qué es el patrón MVC en programación y por qué es útil? campusMVP.es. <a href="https://www.campusmvp.es/recursos/post/que-es-el-patron-mvc-en-programacion-y-por-que-es-util.aspx" target="_blank">https://www.campusmvp.es/recursos/post/que-es-el-patron-mvc-en-programacion-y-por-que-es-util.aspx</a></p>
 
             <h2>¿Qué es SQL injection y cómo se puede prevenir?</h2>
             <p>Una inyeccion sql consiste en insertar una o varias lineas de codigo sql a una consulta de una aplicación web, mediante formularios o elementos que permitan insertar texto. Existen diferentes formas de protegerse de una inyeccion sql como el usar consultas parametrizadas que es lo que hacemos en nuestra capa de modelo cuando agregamos el simbolo ?  y la otra forma sería hacer validaciones en las entradas de datos de los usuarios</p>
             <p>Gianni. (2025, 17 febrero). Cómo prevenir un ataque de inyección de SQL. LACNIC Blog. <a href="https://blog.lacnic.net/como-prevenir-un-ataque-de-inyeccion-de-sql/" target="_blank">https://blog.lacnic.net/como-prevenir-un-ataque-de-inyeccion-de-sql/</a></p>
+
+            <h2>¿Qué otras formas de autentificación existen?</h2>
+            <p>Según Microsoft existen los diferentes tipos de métodos de autentificación:</p>
+            <ul>
+                <li>Basada en contraseña: es la más frecuente y consta de la creación de una combinación entre letras, numeros y simbolos que reducen el riesgo de que alguien pueda adivinarla, sin embargo como para el usuario promedio es dificil crear contraseñas para cada sitio se cae mucho en la reutiliación de contraseñas y esto facilita a los atacantes que utilizan diversas tecnicas para robar contraseñas, es por esto que las empresas optan por otros metodos.</li>
+                <li>Basada en certificado: es un metodo cifrado que permite a los dispositivos y personas identificarse usando otro dispositivo como medio.</li>
+                <li>Biometrica: se basa en la autentificación por las caracteristicas biometricas del usuario, por ejemplo las huellas o el rostro en los dispositivos moviles, además de que como los datos se vinculan a un dispositivo hace más dificil la tarea de los atacantes ya que también necesitarían tener acceso al dispositivo fisico, este tipo de autentificación es bastante buena para las personas ya que no necesitan memorizar nada</li>
+                <li>Basada en tokens: En esta autentificación tanto el dispositivo como el sistema generan un token, el cual es un numero singular llamado también PIN de un solo uso o TOTP cada 30 segundos y si los numeros coinciden el sistema comprueba que es el usuario el que intenta ingresar</li>
+                <li>Constraseña de un solo uso: este tipo de contraseñas también llamdas OTP son codigos que se generan para un inicio de sesion unico que expiran al poco tiempo de crearse y se entregan comunmente mediante mensaje, correo electronico, etc.</li>
+            </ul>
+            <p>¿Qué es la autenticación? Definición y métodos | Seguridad de Microsoft. (s.f.). <a href="https://www.microsoft.com/es-es/security/business/security-101/what-is-authentication" target="_blank">https://www.microsoft.com/es-es/security/business/security-101/what-is-authentication</a></p>
         </div>
     </div>
 </div>

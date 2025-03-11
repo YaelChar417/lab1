@@ -5,6 +5,7 @@ exports.get_agregar = (req, res, next) => {
     res.render('agregar_persona5', {
         isLoggedIn: req.session.isLoggedIn || false,
         username: req.session.username || '',
+        csrfToken: req.csrfToken(),
     });
 };
 

@@ -4,12 +4,16 @@ exports.get_login = (req, res, next) => {
     const mensaje = req.session.info || '';
     if(req.session.info){ req.session.info = ''}
 
+    const warning = req.session.warning || '';
+    if (req.session.warning) { req.session.warning = '' }
+
     res.render('usuario_login', {
         isLoggedIn: req.session.isLoggedIn || false,
         username: req.session.username || '',
         isNew: false,
         info: mensaje,
-        //csrfToken: req.csrfToken,
+        warning: warning,
+        csrfToken: req.csrfToken(),
     });
 };
 
@@ -61,7 +65,8 @@ exports.get_signup = (req, res, next) => {
         username: req.session.username || '',
         isNew: true,
         info: mensaje,
-        //csrfToken: req.csrfToken,
+        warning: '',
+        csrfToken: req.csrfToken(),
     });
 };
 

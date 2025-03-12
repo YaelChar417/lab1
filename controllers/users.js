@@ -33,10 +33,15 @@ exports.post_login = (req, res, next) => {
                     .then((doMatch) => {
                         if(doMatch)
                         {
-                            req.session.isLoggedIn = true;
-                            req.session.username = req.body.username;
-                            return req.session.save((err) => {
-                                res.redirect('/persona2/agregar');
+                            Usuario.getPrivilegios(rows[0].username).then(([privilegios, fieldData]) => {
+                                req.session.privilegios = privilegios;
+                                req.session.isLoggedIn = true;
+                                req.session.username = req.body.username
+                                return req.session.save((err) => {
+                                    res.redirect('/persona2')
+                                })
+                            }).catch((err) => {
+                                console.log(err);
                             })
                         }else
                         {

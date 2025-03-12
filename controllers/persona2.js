@@ -26,7 +26,7 @@ exports.post_agregar = (req, res, next) => {
 };
 
 exports.get_root = (req, res, next) => {
-    console.log(req.get('Cookie'));
+    console.log(req.session.privilegios);
     const mensaje = req.session.info || '';
 
     if(req.session.info){req.session.info = ''}

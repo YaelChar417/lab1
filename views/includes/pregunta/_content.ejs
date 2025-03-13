@@ -75,6 +75,41 @@
                 <li>Constraseña de un solo uso: este tipo de contraseñas también llamdas OTP son codigos que se generan para un inicio de sesion unico que expiran al poco tiempo de crearse y se entregan comunmente mediante mensaje, correo electronico, etc.</li>
             </ul>
             <p>¿Qué es la autenticación? Definición y métodos | Seguridad de Microsoft. (s.f.). <a href="https://www.microsoft.com/es-es/security/business/security-101/what-is-authentication" target="_blank">https://www.microsoft.com/es-es/security/business/security-101/what-is-authentication</a></p>
+
+            <h2>¿En qué consiste el control de acceso basado en roles?</h2>
+            <p>Es un mecanismo de control de acceso que define roles y privilegios para determinar si a un usuario se le deben brindar acceso a un recurso, los roles se asignan comunmente la posición que se tenga en una organización y los privilegios según lo que se desea que haga.</p>
+            <p>Se basa en los siguientes principios</p>
+            <ol>
+                <li>Asignación de roles, donde un usuario puede hacer uso de sus privilegios si se le ha asignado un rol</li>
+                <li>Autorización basada en roles, donde el rol de un usuario debe estar autorizado, lo que garantiza que los usuarios solo puedan asumir roles autorizados</li>
+                <li>Autorización de privilegios, donde segun la asignación de roles un usuario puede o no puede hacer ciertas acciones</li>
+            </ol>
+            <p>¿QUÉ ES EL CONTROL DE ACCESO BASADO EN ROLES (RBAC)? (s.f.). ENTRUST. <a href="https://www.entrust.com/es/resources/learn/what-is-role-based-access-control">https://www.entrust.com/es/resources/learn/what-is-role-based-access-control </a></p>
+
+            <h2>Investiguen y describan 2 sistemas, uno que aplique RBAC y uno que no. Realicen un análisis de las ventajas y desventajas de cada uno con respecto al control de acceso.</h2>
+            <p><strong>Sistema con RBAC:</strong> Un ejemplo de sistema que implementa esto sería uno de gestión de un hospital, donde existen roles como doctor, enfermero, recepcionista o administrador, cada usuario estaría dado con ciertos privilegios, por ejemplo los doctores podrían acceder al historial de un paciente y recetar medicina, mientras que un enfermero solo acceder al historial del paciente y los recepcionistas solo agendar citas.</p>
+            <ul> Ventajas: 
+                <li>Facil de administrar: asignando permisos a roles en lugar de a usuarios en concreto, simplificando el manejo de los privilegios y de agregar a nuevos usuarios del sistema</li>
+                <li>Mayor seguridad: reduce las probabilidades de que un usuario acceda a información que no debe</li>
+                <li>Mantenimiento rapido: si se requiere modificar los permisos, solo se actualizaría el rol en lugar de modificar a cada usuario</li>
+            </ul>
+            <ul> Desventajas;
+                <li>Rigidez en permisos: si un usuario necesita un permiso especifico fuera de su rol requeriría modificar la estructura de su rol</li>
+                <li>Configuración inicial compleja: se requiere tener un buen diseño y de permisos para evitar problemas de acceso</li>
+            </ul>
+            <p><strong>Sistema sin RBAC:</strong> Un ejemplo de esto es una plataforma de almacenamiento en la nube donde cada usuario tiene permisos configurados a mano, funciona porque cada usuario tiene permisos para acceder, modificar o eliminar archivos y no hay agrupación de usuarios en roles, sino que cada usuario tiene permisos unicos.</p>
+            <ul> Ventajas:
+                <li>Mayor flexibilidad: los permisos se asignan de forma personalizada sin depender de roles</li>
+                <li>Adecuado para sistemas pequeños: funciona bien cuando son pocos usuarios y los permisos pueden variar mucho entre ellos</li>
+                <li></li>
+            </ul>
+            <ul> Desventajas:
+                <li>Administración dificil: cuando es un gran numero de usuarios es dificil gestionar los permisos manualmente</li>
+                <li>Mayor riesgo de errores: un administrador podría asignar permisos incorrectos sin darse cuenta</li>
+                <li>Menor escalabilidad: no es eficiente si un gran numero de usuarios comparten permisos iguales</li>
+            </ul>
+
+            <p>Definición de permisos en función de los atributos con la autorización de ABAC - AWS Identity and Access Management. (s.f.). <a href="https://docs.aws.amazon.com/es_es/IAM/latest/UserGuide/introduction_attribute-based-access-control.html">https://docs.aws.amazon.com/es_es/IAM/latest/UserGuide/introduction_attribute-based-access-control.html</a></p>
         </div>
     </div>
 </div>

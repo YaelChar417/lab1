@@ -4,6 +4,7 @@
 <div class="container">
     <h1>Editar Dirección</h1>
     <form action="/persona5/editar" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
         <input type="hidden" name="id" value="<%= place.id %>">
         <div class="field">
             <label class="label">Nombre</label>

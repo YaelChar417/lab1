@@ -53,6 +53,7 @@ exports.get_edit = (req, res, next) => {
                     place: rows[0],
                     isLoggedIn: req.session.isLoggedIn || false,
                     username: req.session.username || '',
+                    csrfToken: req.csrfToken(),
                 });
             } else {
                 res.redirect('/persona5');

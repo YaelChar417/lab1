@@ -7,7 +7,7 @@ const canView = require('../util/canViewPersona');
 const canCreate = require('../util/canCreatePersona');
 
 // app.get registra un middleware que solo responde a peticiones HTTP tipo GET
-router.get('/agregar', isAuth, canCreate, persona2Controller.get_agregar);
+router.get('/agregar', isAuth, canView, persona2Controller.get_agregar);
 
 // app.post registra un middleware que solo responde a peticiones HTTP tipo post
 router.post('/agregar', isAuth, canCreate, persona2Controller.post_agregar);

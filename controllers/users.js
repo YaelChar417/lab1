@@ -38,7 +38,7 @@ exports.post_login = (req, res, next) => {
                                 req.session.isLoggedIn = true;
                                 req.session.username = req.body.username
                                 return req.session.save((err) => {
-                                    res.redirect('/persona2')
+                                    res.redirect('/persona2/agregar')
                                 })
                             }).catch((err) => {
                                 console.log(err);

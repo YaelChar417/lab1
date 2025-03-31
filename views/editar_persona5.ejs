@@ -1,15 +1,19 @@
-<%- include('includes/persona5/_header') %>
-<%- include('includes/_navbar') %>
+<%- include('includes/persona5/_header') %> <%- include('includes/_navbar') %>
 
 <div class="container">
     <h1>Editar Dirección</h1>
     <form action="/persona5/editar" method="POST">
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-        <input type="hidden" name="id" value="<%= place.id %>">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <input type="hidden" name="id" value="<%= place.id %>" />
         <div class="field">
             <label class="label">Nombre</label>
             <div class="control">
-                <input class="input" type="text" name="nombre" value="<%= place.nombre %>">
+                <input
+                    class="input"
+                    type="text"
+                    name="nombre"
+                    value="<%= place.nombre %>"
+                />
             </div>
         </div>
         <button type="submit" class="button is-primary">Actualizar</button>

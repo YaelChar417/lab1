@@ -1,23 +1,21 @@
-<%- include('includes/persona5/_header') %>
-<%- include('includes/_navbar') %>
-<%- include('includes/persona5/_content') %>
-
-<% if(info != '') { %>
-    <div class="notification is-info">
-        <%= info %>
-    </div>
+<%- include('includes/persona5/_header') %> <%- include('includes/_navbar') %>
+<%- include('includes/persona5/_content') %> <% if(info != '') { %>
+<div class="notification is-info"><%= info %></div>
 <% } %>
 
 <div class="content">
     <div class="card">
         <div class="card-content">
             <div class="columns">
-            <% for(const lugar of lugares){ %>
+                <% for(const lugar of lugares){ %>
                 <div class="column">
                     <a href="/persona5/<%= lugar.id %>"><%= lugar.nombre %></a>
                     <p><%= lugar.fecha %></p>
+                    <a class="button" href="/persona5/editar/<%= lugar.id %>"
+                        >Editar</a
+                    >
                 </div>
-            <% } %>
+                <% } %>
             </div>
         </div>
     </div>
